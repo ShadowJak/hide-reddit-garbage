@@ -15,8 +15,7 @@
                 "scripts/content.js"
             ],
             "matches": [
-                "https://developer.chrome.com/docs/extensions/*",
-                "https://developer.chrome.com/docs/webstore/*"
+                "https://www.reddit.com/r/antiwork/"
             ]
         }
     ]
