@@ -17,7 +17,7 @@ function performLoopAndNavigate(websites) {
                                     console.log(i, anchors[i].parentElement)
                                     anchors[i].click();
                                 }, counter++ * 1000);
-
+                                break;
                             }
                         }
                     }
@@ -48,7 +48,9 @@ function performLoopAndNavigate(websites) {
 
 const bannedWords = [
     "ukrain",
-    'russ'
+    'russ',
+    'lays off',
+    'layoff'
 ]
 
 const subredditsToHide = [
@@ -105,6 +107,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/hockey/??",
     "https://old.reddit.com/r/Hololive/??",
     "https://old.reddit.com/r/HolUp/??",
+    "https://old.reddit.com/r/HonkaiStarRail/??",
     "https://old.reddit.com/r/HonkaiStarRail_leaks/??",
     "https://old.reddit.com/r/HumansBeingBros/??",
     "https://old.reddit.com/r/iamatotalpieceofshit/??",
