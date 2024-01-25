@@ -125,6 +125,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/lgbt/??",
     "https://old.reddit.com/r/lies/??",
     "https://old.reddit.com/r/MadeMeSmile/??",
+    "https://old.reddit.com/r/MakeMeSuffer/??",
     "https://old.reddit.com/r/maybemaybemaybe/??",
     "https://old.reddit.com/r/me_irlgbt/??",
     "https://old.reddit.com/r/meirl/??",
@@ -145,6 +146,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/notliketheothergirls/??",
     "https://old.reddit.com/r/OnePiece/??",
     "https://old.reddit.com/r/OnePunchMan/??",
+    "https://old.reddit.com/r/Palestine/??",
     "https://old.reddit.com/r/PeopleFuckingDying/??",
     "https://old.reddit.com/r/perfectlycutscreams/??",
     "https://old.reddit.com/r/pettyrevenge/??",
@@ -155,6 +157,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/rareinsults/??",
     "https://old.reddit.com/r/recruitinghell/??",
     "https://old.reddit.com/r/relationship_advice/??",
+    "https://old.reddit.com/r/sadposting/??",
     "https://old.reddit.com/r/ShitPostCrusaders/??",
     "https://old.reddit.com/r/shitposting/??",
     "https://old.reddit.com/r/shittymoviedetails/??",
@@ -190,7 +193,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/wholesomememes/??",
     "https://old.reddit.com/r/WorkReform/??",
     "https://old.reddit.com/r/WTF/??",
-    "https://old.reddit.com/r/yesyesyesyesno/"
+    "https://old.reddit.com/r/yesyesyesyesno/??"
 ];
 
 let rAllUrl = "https://old.reddit.com/r/all/??";
