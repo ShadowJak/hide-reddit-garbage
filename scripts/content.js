@@ -53,8 +53,9 @@ const bannedWords = [
     'layoff'
 ]
 
+
+
 const subredditsToHide = [
-    "https://old.reddit.com/r/all/??",
     "https://old.reddit.com/r/197/??",
     "https://old.reddit.com/r/2meirl4meirl/??",
     "https://old.reddit.com/r/absolutelynotme_irl/??",
@@ -85,7 +86,6 @@ const subredditsToHide = [
     "https://old.reddit.com/r/CrappyDesign/??",
     "https://old.reddit.com/r/dankmemes/??",
     "https://old.reddit.com/r/Deltarune/??",
-    "https://old.reddit.com/r/all/???",
     "https://old.reddit.com/r/depressionmeals/??",
     "https://old.reddit.com/r/distressingmemes/??",
     "https://old.reddit.com/r/DiWHY/??",
@@ -116,7 +116,6 @@ const subredditsToHide = [
     "https://old.reddit.com/r/ImTheMainCharacter/??",
     "https://old.reddit.com/r/insanepeoplefacebook/??",
     "https://old.reddit.com/r/Instagramreality/??",
-    "https://old.reddit.com/r/all/????",
     "https://old.reddit.com/r/JoeRogan/??",
     "https://old.reddit.com/r/Jokes/??",
     "https://old.reddit.com/r/Kanye/??",
@@ -147,7 +146,6 @@ const subredditsToHide = [
     "https://old.reddit.com/r/OnePiece/??",
     "https://old.reddit.com/r/OnePunchMan/??",
     "https://old.reddit.com/r/PeopleFuckingDying/??",
-    "https://old.reddit.com/r/all/?????",
     "https://old.reddit.com/r/perfectlycutscreams/??",
     "https://old.reddit.com/r/pettyrevenge/??",
     "https://old.reddit.com/r/Political_Revolution/??",
@@ -178,7 +176,6 @@ const subredditsToHide = [
     "https://old.reddit.com/r/trans/??",
     "https://old.reddit.com/r/TrueOffMyChest/??",
     "https://old.reddit.com/r/TwoSentenceHorror/??",
-    "https://old.reddit.com/r/all/??????",
     "https://old.reddit.com/r/TwoXChromosomes/??",
     "https://old.reddit.com/r/UFOs/??",
     "https://old.reddit.com/r/ukraine/??",
@@ -195,5 +192,12 @@ const subredditsToHide = [
     "https://old.reddit.com/r/WTF/??",
     "https://old.reddit.com/r/yesyesyesyesno/"
 ];
+
+let rAllUrl = "https://old.reddit.com/r/all/??";
+
+for (let i = 0; i < subredditsToHide.length; i+=10) {
+    subredditsToHide.splice(i, 0, rAllUrl);
+    rAllUrl = rAllUrl + "?";
+}
 
 performLoopAndNavigate(subredditsToHide);
