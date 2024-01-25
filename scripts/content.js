@@ -1,8 +1,9 @@
 function performLoopAndNavigate(websites) {
     const anchors = document.getElementsByTagName("a");
+    const regex = /^https:\/\/old\.reddit\.com\/r\/all\/\?+$/;
     let counter = 0;
 
-    if (window.location.href === "https://old.reddit.com/r/all/??") {
+    if (regex.test(window.location.href)) {
         for (let i = anchors.length - 1; i >= 0; i--) {
             if (anchors[i].innerText === 'hide') {
                 const closestTopMatterDiv = anchors[i].closest("div.top-matter");
@@ -13,7 +14,6 @@ function performLoopAndNavigate(websites) {
                         for (const word of bannedWords) {
                             if (nestedAnchor.innerText.toLowerCase().includes(word)) {
                                 setTimeout(function () {
-                                    console.log(i, anchors[i].parentElement)
                                     anchors[i].click();
                                 }, counter++ * 1000);
                                 break;
@@ -25,7 +25,7 @@ function performLoopAndNavigate(websites) {
         }
 
     } else {
-        const maxLen = 500
+        const maxLen = 600
         let looper = anchors.length < maxLen ? anchors.length : maxLen;
         for (let i = looper - 1; i >= 0; i--) {
             if (anchors[i].innerText === 'hide') {
@@ -85,6 +85,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/CrappyDesign/??",
     "https://old.reddit.com/r/dankmemes/??",
     "https://old.reddit.com/r/Deltarune/??",
+    "https://old.reddit.com/r/all/???",
     "https://old.reddit.com/r/depressionmeals/??",
     "https://old.reddit.com/r/distressingmemes/??",
     "https://old.reddit.com/r/DiWHY/??",
@@ -115,6 +116,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/ImTheMainCharacter/??",
     "https://old.reddit.com/r/insanepeoplefacebook/??",
     "https://old.reddit.com/r/Instagramreality/??",
+    "https://old.reddit.com/r/all/????",
     "https://old.reddit.com/r/JoeRogan/??",
     "https://old.reddit.com/r/Jokes/??",
     "https://old.reddit.com/r/Kanye/??",
@@ -145,6 +147,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/OnePiece/??",
     "https://old.reddit.com/r/OnePunchMan/??",
     "https://old.reddit.com/r/PeopleFuckingDying/??",
+    "https://old.reddit.com/r/all/?????",
     "https://old.reddit.com/r/perfectlycutscreams/??",
     "https://old.reddit.com/r/pettyrevenge/??",
     "https://old.reddit.com/r/Political_Revolution/??",
@@ -175,6 +178,7 @@ const subredditsToHide = [
     "https://old.reddit.com/r/trans/??",
     "https://old.reddit.com/r/TrueOffMyChest/??",
     "https://old.reddit.com/r/TwoSentenceHorror/??",
+    "https://old.reddit.com/r/all/??????",
     "https://old.reddit.com/r/TwoXChromosomes/??",
     "https://old.reddit.com/r/UFOs/??",
     "https://old.reddit.com/r/ukraine/??",

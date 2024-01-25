@@ -18,7 +18,7 @@
                 "scripts/content.js"
             ],
             "matches": [
-                "https://old.reddit.com/r/*/??"
+                "https://old.reddit.com/r/*/??*"
             ]
         }
     ],
