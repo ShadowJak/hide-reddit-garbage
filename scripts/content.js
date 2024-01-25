@@ -1,3 +1,24 @@
+const overlay = document.createElement("div");
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+overlay.style.zIndex = "9999";
+
+const message = document.createElement("h1");
+message.textContent = "Hide Reddit Garbage is running in this tab.";
+message.style.color = "white";
+message.style.fontWeight = "bold";
+message.style.position = "absolute";
+message.style.top = "50%";
+message.style.left = "50%";
+message.style.transform = "translate(-50%, -50%)";
+overlay.appendChild(message);
+
+document.body.appendChild(overlay);
+
 function performLoopAndNavigate(websites) {
     const anchors = document.getElementsByTagName("a");
     const regex = /^https:\/\/old\.reddit\.com\/r\/all\/\?+$/;
