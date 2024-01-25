@@ -10,7 +10,6 @@ function performLoopAndNavigate(websites) {
                     const titleP = closestTopMatterDiv.querySelector("p.title");
                     const nestedAnchor = titleP ? titleP.querySelector("a") : null;
                     if (nestedAnchor) {
-                        // console.log(i, nestedAnchor.innerText)
                         for (const word of bannedWords) {
                             if (nestedAnchor.innerText.toLowerCase().includes(word)) {
                                 setTimeout(function () {
@@ -26,10 +25,11 @@ function performLoopAndNavigate(websites) {
         }
 
     } else {
-        for (let i = anchors.length - 1; i >= 0; i--) {
+        const maxLen = 500
+        let looper = anchors.length < maxLen ? anchors.length : maxLen;
+        for (let i = looper - 1; i >= 0; i--) {
             if (anchors[i].innerText === 'hide') {
                 setTimeout(function () {
-                    console.log(i, anchors[i].parentElement)
                     anchors[i].click();
                 }, counter++ * 1000);
             }
