@@ -2,24 +2,56 @@ function performLoopAndNavigate(websites) {
     const anchors = document.getElementsByTagName("a");
     let counter = 0;
 
-    for (let i = anchors.length - 1; i >= 0; i--) {
-        if (anchors[i].innerText === 'hide') {
-            setTimeout(function () {
-                anchors[i].click();
-            }, counter++ * 1000);
+    if (window.location.href === "https://old.reddit.com/r/all/??") {
+        for (let i = anchors.length - 1; i >= 0; i--) {
+            if (anchors[i].innerText === 'hide') {
+                const closestTopMatterDiv = anchors[i].closest("div.top-matter");
+                if (closestTopMatterDiv) {
+                    const titleP = closestTopMatterDiv.querySelector("p.title");
+                    const nestedAnchor = titleP ? titleP.querySelector("a") : null;
+                    if (nestedAnchor) {
+                        // console.log(i, nestedAnchor.innerText)
+                        for (const word of bannedWords) {
+                            if (nestedAnchor.innerText.toLowerCase().includes(word)) {
+                                setTimeout(function () {
+                                    console.log(i, anchors[i].parentElement)
+                                    anchors[i].click();
+                                }, counter++ * 1000);
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    } else {
+        for (let i = anchors.length - 1; i >= 0; i--) {
+            if (anchors[i].innerText === 'hide') {
+                setTimeout(function () {
+                    console.log(i, anchors[i].parentElement)
+                    anchors[i].click();
+                }, counter++ * 1000);
+            }
         }
     }
 
     let nextSiteIndex = websites.indexOf(window.location.href) + 1;
 
-    if (nextSiteIndex < websites.length) {
+    if (nextSiteIndex < websites.length && nextSiteIndex != 0) {
         setTimeout(function () {
             window.location.href = websites[nextSiteIndex];
         }, counter++ * 1000);
-    }
+    } 
 }
 
-const subredditsToBlock = [
+const bannedWords = [
+    "ukrain",
+    'russ'
+]
+
+const subredditsToHide = [
+    "https://old.reddit.com/r/all/??",
     "https://old.reddit.com/r/2meirl4meirl/??",
     "https://old.reddit.com/r/AITAH/??",
     "https://old.reddit.com/r/AmItheAsshole/??",
@@ -44,6 +76,7 @@ const subredditsToBlock = [
     "https://old.reddit.com/r/egg_irl/??",
     "https://old.reddit.com/r/EnoughMuskSpam/??",
     "https://old.reddit.com/r/facepalm/??",
+    "https://old.reddit.com/r/FluentInFinance/??",
     "https://old.reddit.com/r/formuladank/??",
     "https://old.reddit.com/r/FuckYouKaren/??",
     "https://old.reddit.com/r/funny/??",
@@ -84,6 +117,7 @@ const subredditsToBlock = [
     "https://old.reddit.com/r/NoahGetTheBoat/??",
     "https://old.reddit.com/r/nope/??",
     "https://old.reddit.com/r/NotHowGirlsWork/??",
+    "https://old.reddit.com/r/notinteresting/??",
     "https://old.reddit.com/r/OnePiece/??",
     "https://old.reddit.com/r/OnePunchMan/??",
     "https://old.reddit.com/r/PeopleFuckingDying/??",
@@ -131,4 +165,4 @@ const subredditsToBlock = [
     "https://old.reddit.com/r/yesyesyesyesno/"
 ];
 
-performLoopAndNavigate(subredditsToBlock);
+performLoopAndNavigate(subredditsToHide);

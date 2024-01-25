@@ -18,6 +18,7 @@
                 "scripts/content.js"
             ],
             "matches": [
+                "https://old.reddit.com/r/all/??",
                 "https://old.reddit.com/r/2meirl4meirl/??",
                 "https://old.reddit.com/r/AITAH/??",
                 "https://old.reddit.com/r/AmItheAsshole/??",
@@ -42,6 +43,7 @@
                 "https://old.reddit.com/r/egg_irl/??",
                 "https://old.reddit.com/r/EnoughMuskSpam/??",
                 "https://old.reddit.com/r/facepalm/??",
+                "https://old.reddit.com/r/FluentInFinance/??",
                 "https://old.reddit.com/r/formuladank/??",
                 "https://old.reddit.com/r/FuckYouKaren/??",
                 "https://old.reddit.com/r/funny/??",
@@ -82,6 +84,7 @@
                 "https://old.reddit.com/r/NoahGetTheBoat/??",
                 "https://old.reddit.com/r/nope/??",
                 "https://old.reddit.com/r/NotHowGirlsWork/??",
+                "https://old.reddit.com/r/notinteresting/??",
                 "https://old.reddit.com/r/OnePiece/??",
                 "https://old.reddit.com/r/OnePunchMan/??",
                 "https://old.reddit.com/r/PeopleFuckingDying/??",
