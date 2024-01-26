@@ -74,7 +74,7 @@ if (!document.querySelector('.recover-password')) {
         'russ',
         'lays off',
         'layoff'
-    ]
+    ];
 
 
 
@@ -219,12 +219,33 @@ if (!document.querySelector('.recover-password')) {
         "https://old.reddit.com/r/yesyesyesyesno/??"
     ];
 
+    // if (window.extensionSettings.enableFeature1) {
+    //     // Perform actions for feature1
+    // }
+
+    // if (window.extensionSettings.enableFeature2) {
+    //     // Perform actions for feature2
+    // }
+
     let rAllUrl = "https://old.reddit.com/r/all/??";
 
+    let spliceOffset = 0;
     for (let i = 0; i < subredditsToHide.length; i += 10) {
-        subredditsToHide.splice(i, 0, rAllUrl);
+        subredditsToHide.splice(i + spliceOffset, 0, rAllUrl);
+        spliceOffset++;
         rAllUrl = rAllUrl + "?";
     }
+
+    chrome.storage.sync.get(['enableFeature1', 'enableFeature2'], function (settings) {
+        if (settings.enableFeature1) {
+            // performLoopAndNavigate(subredditsToHide);
+            console.log(9999)
+        }
+
+        if (settings.enableFeature2) {
+            // Perform actions for feature2
+        }
+    });
 
     performLoopAndNavigate(subredditsToHide);
 
