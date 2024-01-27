@@ -73,7 +73,8 @@ if (!document.querySelector('.recover-password')) {
         "ukrain",
         'russ',
         'lays off',
-        'layoff'
+        'layoff',
+        'school shoot'
     ];
 
 
