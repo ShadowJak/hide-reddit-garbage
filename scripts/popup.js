@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const labelCell = row.insertCell(1);
                 const label = document.createElement('label');
                 label.htmlFor = key;
-                label.appendChild(document.createTextNode(`Hide ${key}`));
+                const labelText = key.replace(/_/g, ' ');
+                label.appendChild(document.createTextNode(`Hide ${labelText}`));
                 labelCell.appendChild(label);
 
                 // Load settings from storage and update checkboxes
