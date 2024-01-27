@@ -78,7 +78,7 @@ const urlArrays = {
         "https://old.reddit.com/r/MakeMeSuffer/??",
         "https://old.reddit.com/r/NoahGetTheBoat/??",
     ],
-    Identities_as_Politics: [
+    Identity_Personalities: [
         "https://old.reddit.com/r/lgbt/??",
         "https://old.reddit.com/r/trans/??",
         "https://old.reddit.com/r/TwoXChromosomes/??",
