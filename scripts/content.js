@@ -74,7 +74,8 @@ if (!document.querySelector('.recover-password')) {
         'russ',
         'lays off',
         'layoff',
-        'school shoot'
+        'school shoot',
+        'mass shoot'
     ];
 
 
