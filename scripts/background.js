@@ -264,6 +264,13 @@ Object.keys(urlArrays).forEach(key => {
 //     enableFeature6: true,
 // };
 
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.message === "getUrlArrays") {
+        // Send the urlArrays in the response
+        sendResponse({ urlArrays: urlArrays });
+    }
+});
+
 chrome.storage.sync.get(defaultSettings, function (settings) {
     const extensionSettings = settings || defaultSettings;
 
