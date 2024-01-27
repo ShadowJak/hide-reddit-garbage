@@ -6,27 +6,27 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    const enableFeature1Checkbox = document.getElementById('enableFeature1');
-    const enableFeature2Checkbox = document.getElementById('enableFeature2');
-    const enableFeature6Checkbox = document.getElementById('enableFeature6');
+    const enableFeature1Checkbox = document.getElementById('annoying');
+    const enableFeature2Checkbox = document.getElementById('bad_anime');
+    const enableFeature6Checkbox = document.getElementById('celebrity');
 
     // Load settings from storage and update checkboxes
-    chrome.storage.sync.get(['enableFeature1', 'enableFeature2', 'enableFeature6'], function (settings) {
-        enableFeature1Checkbox.checked = settings.enableFeature1;
-        enableFeature2Checkbox.checked = settings.enableFeature2;
-        enableFeature6Checkbox.checked = settings.enableFeature6;
+    chrome.storage.sync.get(['annoying', 'bad_anime', 'celebrity'], function (settings) {
+        enableFeature1Checkbox.checked = settings.annoying;
+        enableFeature2Checkbox.checked = settings.bad_anime;
+        enableFeature6Checkbox.checked = settings.celebrity;
     });
 
     // Listen for checkbox changes and update settings
     enableFeature1Checkbox.addEventListener('change', function () {
-        chrome.storage.sync.set({ enableFeature1: enableFeature1Checkbox.checked });
+        chrome.storage.sync.set({ annoying: enableFeature1Checkbox.checked });
     });
 
     enableFeature2Checkbox.addEventListener('change', function () {
-        chrome.storage.sync.set({ enableFeature2: enableFeature2Checkbox.checked });
+        chrome.storage.sync.set({ bad_anime: enableFeature2Checkbox.checked });
     });
 
     enableFeature6Checkbox.addEventListener('change', function () {
-        chrome.storage.sync.set({ enableFeature6: enableFeature6Checkbox.checked });
+        chrome.storage.sync.set({ celebrity: enableFeature6Checkbox.checked });
     });
 });
