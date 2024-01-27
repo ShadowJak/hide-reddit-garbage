@@ -13,17 +13,26 @@ document.addEventListener('DOMContentLoaded', function () {
             // Dynamically generate checkboxes based on storage settings
             const checkboxContainer = document.getElementById('checkboxContainer');
 
+            // Create a table for better organization
+            const table = document.createElement('table');
+            table.style.width = '100%'; // Set the table width
+
             Object.keys(urlArrays).forEach(key => {
+                const row = table.insertRow();
+
+                // Checkbox cell
+                const checkboxCell = row.insertCell(0);
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = key;
+                checkboxCell.appendChild(checkbox);
 
+                // Label cell
+                const labelCell = row.insertCell(1);
                 const label = document.createElement('label');
                 label.htmlFor = key;
                 label.appendChild(document.createTextNode(`Enable ${key}`));
-
-                checkboxContainer.appendChild(checkbox);
-                checkboxContainer.appendChild(label);
+                labelCell.appendChild(label);
 
                 // Load settings from storage and update checkboxes
                 chrome.storage.sync.get(key, function (settings) {
@@ -39,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     chrome.storage.sync.set(update);
                 });
             });
+
+            checkboxContainer.appendChild(table);
         } else {
             console.error("Invalid response from background script:", response);
         }
