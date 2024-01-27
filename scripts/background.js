@@ -258,15 +258,8 @@ Object.keys(urlArrays).forEach(key => {
     defaultSettings[key] = true;
 })
 
-// const defaultSettings = {
-//     enableFeature1: true,
-//     enableFeature2: false,
-//     enableFeature6: true,
-// };
-
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (request.message === "getUrlArrays") {
-        // Send the urlArrays in the response
         sendResponse({ urlArrays: urlArrays });
     }
 });

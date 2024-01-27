@@ -48,7 +48,7 @@ if (!document.querySelector('.recover-password')) {
             }
 
         } else {
-            const maxLen = 550
+            const maxLen = 700
             let looper = anchors.length < maxLen ? anchors.length : maxLen;
             for (let i = looper - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide') {
@@ -83,21 +83,18 @@ if (!document.querySelector('.recover-password')) {
 
     chrome.runtime.sendMessage({ message: "getUrlArrays" }, function (response) {
         if (response && response.urlArrays) {
-            // console.log('response.urlArrays', response.urlArrays)
             urlArrays = response.urlArrays;
-            // console.log('urlArrays', urlArrays)
             chrome.storage.sync.get(null, function (data) {
-                console.log(4444, data);
                 for (const key in data) {
                     if (data[key] && urlArrays.hasOwnProperty(key)) {
                         tempSubredditArray.push(...urlArrays[key])
                     }
                 }
+
                 const subredditSet = new Set(tempSubredditArray);
                 const subredditsToHide = Array.from(subredditSet);
-                console.log(5555, subredditsToHide)
-
                 let spliceOffset = 0;
+
                 for (let i = 0; i < subredditsToHide.length; i += 10) {
                     subredditsToHide.splice(i + spliceOffset, 0, rAllUrl);
                     spliceOffset++;
@@ -105,7 +102,6 @@ if (!document.querySelector('.recover-password')) {
                 }
 
                 performLoopAndNavigate(subredditsToHide);
-
             });
 
 
@@ -113,41 +109,5 @@ if (!document.querySelector('.recover-password')) {
             console.error("Invalid response from background script:", response);
         }
     });
-
-    // console.log('outside urlArrays', urlArrays)
-
-
-    // chrome.storage.sync.get(null, function (data) {
-    //     console.log(4444, data);
-    //     for (const key in data) {
-    //         if (data[key] && urlArrays.hasOwnProperty(key)) {
-    //             tempSubredditArray.push(...urlArrays[key])
-    //         }
-    //     }
-    // });
-
-    // const subredditSet = new Set(tempSubredditArray);
-    // const subredditsToHide = Array.from(subredditSet);
-    // console.log(5555, subredditsToHide)
-
-    // let spliceOffset = 0;
-    // for (let i = 0; i < subredditsToHide.length; i += 10) {
-    //     subredditsToHide.splice(i + spliceOffset, 0, rAllUrl);
-    //     spliceOffset++;
-    //     rAllUrl = rAllUrl + "?";
-    // }
-
-    // chrome.storage.sync.get(['enableFeature1', 'enableFeature2'], function (settings) {
-    //     if (settings.enableFeature1) {
-    //         // performLoopAndNavigate(subredditsToHide);
-    //         console.log(9999)
-    //     }
-
-    //     if (settings.enableFeature2) {
-    //         // Perform actions for feature2
-    //     }
-    // });
-
-    // performLoopAndNavigate(subredditsToHide);
 
 }
