@@ -1,16 +1,16 @@
 body {
-    width: 300px; /* Adjust the width as needed */
-    padding: 0px 10px 0 10px; /* Adjust the padding to reduce space */
-  }
-  
-  .popup-container {
+    width: 200px;
+    padding: 0px 10px 0 10px;
+}
+
+.popup-container {
     text-align: center;
-  }
-  
-  #openTabLink {
+}
+
+#openTabLink {
     display: inline-block;
-    padding: 12px 40px; /* Adjust the padding to make the button wider */
-    font-size: 16px;
+    padding: 0px 20px 5px 20px;
+    font-size: 48px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -20,15 +20,19 @@ body {
     border: none;
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  #openTabLink:hover {
+}
+
+#openTabLink:hover {
     background-color: #0056b3;
-  }
-  
-  .checkbox-container {
-    margin-top: 10px; /* Adjust the margin to reduce space */
-  }
-  
-  /* Add more styles as needed */
-  
+}
+
+.checkbox-container {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    margin-left: 5px;
+}

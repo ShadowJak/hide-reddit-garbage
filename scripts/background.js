@@ -1,5 +1,5 @@
 const urlArrays = {
-    annoying: [
+    Annoying_Content: [
         "https://old.reddit.com/r/TwoSentenceHorror/??",
         "https://old.reddit.com/r/UFOs/??",
         "https://old.reddit.com/r/unpopularopinion/??",
@@ -23,7 +23,7 @@ const urlArrays = {
         "https://old.reddit.com/r/nbacirclejerk/??",
         "https://old.reddit.com/r/atheism/??",
     ],
-    bad_anime: [
+    Bad_Anime: [
         "https://old.reddit.com/r/ChainsawMan/??",
         "https://old.reddit.com/r/Hololive/??",
         "https://old.reddit.com/r/OnePiece/??",
@@ -37,16 +37,16 @@ const urlArrays = {
         "https://old.reddit.com/r/Animemes/??",
         "https://old.reddit.com/r/ShitPostCrusaders/??",
     ],
-    celebrity: [
+    Celebrities: [
         "https://old.reddit.com/r/BravoRealHousewives/??",
         "https://old.reddit.com/r/Kanye/??",
     ],
-    conspiracies: [
+    Conspiracies: [
         "https://old.reddit.com/r/Superstonk/??",
         "https://old.reddit.com/r/UFOs/??",
         "https://old.reddit.com/r/conspiracy/??",
     ],
-    creative_writing: [
+    Creative_Writing: [
         "https://old.reddit.com/r/relationship_advice/??",
         "https://old.reddit.com/r/Teachers/??",
         "https://old.reddit.com/r/texts/??",
@@ -58,27 +58,27 @@ const urlArrays = {
         "https://old.reddit.com/r/AmItheAsshole/??",
         "https://old.reddit.com/r/badroommates/??",
     ],
-    despair: [
+    Despair: [
         "https://old.reddit.com/r/depressionmeals/??",
         "https://old.reddit.com/r/sadposting/??",
         "https://old.reddit.com/r/distressingmemes/??",
         "https://old.reddit.com/r/HumansBeingBros/??",
         "https://old.reddit.com/r/UpliftingNews/??",
     ],
-    fear: [
+    Fear: [
         "https://old.reddit.com/r/nope/??",
     ],
-    gacha: [
+    Gacha: [
         "https://old.reddit.com/r/Genshin_Impact/??",
         "https://old.reddit.com/r/Genshin_Impact_Leaks/??",
         "https://old.reddit.com/r/HonkaiStarRail/??",
         "https://old.reddit.com/r/HonkaiStarRail_leaks/??",
     ],
-    gore: [
+    Gore: [
         "https://old.reddit.com/r/MakeMeSuffer/??",
         "https://old.reddit.com/r/NoahGetTheBoat/??",
     ],
-    identity: [
+    Identities_as_Politics: [
         "https://old.reddit.com/r/lgbt/??",
         "https://old.reddit.com/r/trans/??",
         "https://old.reddit.com/r/TwoXChromosomes/??",
@@ -86,7 +86,7 @@ const urlArrays = {
         "https://old.reddit.com/r/egg_irl/??",
         "https://old.reddit.com/r/furry_irl/??",
     ],
-    irl: [
+    IRL_Subreddits: [
         "https://old.reddit.com/r/2meirl4meirl/??",
         "https://old.reddit.com/r/absolutelynotme_irl/??",
         "https://old.reddit.com/r/anime_irl/??",
@@ -97,7 +97,7 @@ const urlArrays = {
         "https://old.reddit.com/r/meirl/??",
         "https://old.reddit.com/r/me_irl/??",
     ],
-    leftwing: [
+    Leftwing_Politics: [
         "https://old.reddit.com/r/politics/??",
         "https://old.reddit.com/r/TheRightCantMeme/??",
         "https://old.reddit.com/r/Political_Revolution/??",
@@ -109,7 +109,7 @@ const urlArrays = {
         "https://old.reddit.com/r/LateStageCapitalism/??",
         "https://old.reddit.com/r/WorkReform/??",
     ],
-    memes: [
+    Memes: [
         "https://old.reddit.com/r/AdviceAnimals/??",
         "https://old.reddit.com/r/animememes/??",
         "https://old.reddit.com/r/Animemes/??",
@@ -128,10 +128,10 @@ const urlArrays = {
         "https://old.reddit.com/r/wholesomememes/??",
         "https://old.reddit.com/r/Funnymemes/??",
     ],
-    memestocks: [
+    Memestocks: [
         "https://old.reddit.com/r/Superstonk/??",
     ],
-    misleading: [
+    Misleading_Content: [
         "https://old.reddit.com/r/Futurology/??",
         "https://old.reddit.com/r/UFOs/??",
         "https://old.reddit.com/r/JoeRogan/??",
@@ -143,7 +143,7 @@ const urlArrays = {
         "https://old.reddit.com/r/Superstonk/??",
         "https://old.reddit.com/r/conspiracy/??",
     ],
-    outrage: [
+    Outrage: [
         "https://old.reddit.com/r/AITAH/??",
         "https://old.reddit.com/r/AmItheAsshole/??",
         "https://old.reddit.com/r/antiwork/??",
@@ -184,11 +184,11 @@ const urlArrays = {
         "https://old.reddit.com/r/ToiletPaperUSA/??",
         "https://old.reddit.com/r/FluentInFinance/??",
     ],
-    parasocial: [
+    Parasocializers: [
         "https://old.reddit.com/r/Hololive/??",
         "https://old.reddit.com/r/Kanye/??",
     ],
-    politics: [
+    Politics: [
         "https://old.reddit.com/r/Palestine/??",
         "https://old.reddit.com/r/Political_Revolution/??",
         "https://old.reddit.com/r/politics/??",
@@ -206,7 +206,7 @@ const urlArrays = {
         "https://old.reddit.com/r/LateStageCapitalism/??",
         "https://old.reddit.com/r/WorkReform/??",
     ],
-    propaganda: [
+    Propaganda: [
         "https://old.reddit.com/r/FluentInFinance/??",
         "https://old.reddit.com/r/JoeRogan/??",
         "https://old.reddit.com/r/antiwork/??",
@@ -216,10 +216,10 @@ const urlArrays = {
         "https://old.reddit.com/r/ukraine/??",
         "https://old.reddit.com/r/UkraineWarVideoReport/??",
     ],
-    rightwing: [
+    Rightwing_Politics: [
         "https://old.reddit.com/r/JoeRogan/??",
     ],
-    smug: [
+    Smugness: [
         "https://old.reddit.com/r/clevercomebacks/??",
         "https://old.reddit.com/r/MurderedByWords/??",
         "https://old.reddit.com/r/rareinsults/??",
@@ -239,13 +239,13 @@ const urlArrays = {
         "https://old.reddit.com/r/notliketheothergirls/??",
         "https://old.reddit.com/r/PoliticalHumor/??",
     ],
-    sports: [
+    Sports: [
         "https://old.reddit.com/r/hockey/??",
         "https://old.reddit.com/r/nba/??",
         "https://old.reddit.com/r/nbacirclejerk/??",
         "https://old.reddit.com/r/sports/??",
     ],
-    violence: [
+    Violence: [
         "https://old.reddit.com/r/ActualPublicFreakouts/??",
         "https://old.reddit.com/r/CombatFootage/??",
         "https://old.reddit.com/r/PublicFreakout/??",
