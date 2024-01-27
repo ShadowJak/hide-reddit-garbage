@@ -48,7 +48,7 @@ if (!document.querySelector('.recover-password')) {
             }
 
         } else {
-            const maxLen = 600
+            const maxLen = 550
             let looper = anchors.length < maxLen ? anchors.length : maxLen;
             for (let i = looper - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide') {
