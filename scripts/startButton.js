@@ -3,14 +3,13 @@
 
 const loginAnchor = Array.from(document.querySelectorAll('a')).find(a => a.textContent && a.textContent.toLowerCase().includes('log in'));
 const loginSpan = Array.from(document.querySelectorAll('span')).find(span => span.textContent && span.textContent.toLowerCase().includes('log in'));
+const regex = /.*\?\?.*/;
+const extensionTab = regex.test(window.location.href);
 
-if (loginAnchor || loginSpan) {
+if (loginAnchor || loginSpan || extensionTab) {
     console.log("Found 'Log In' element");
 } else {
     console.log("Could not find 'Log In' element");
-    //   const oldSearchElement = document.getElementById("search");
-    //   const newSearchElement = document.getElementById("SearchDropdown");
-
     const isOld = !!document.getElementById("search");
     const searchElement = isOld ? document.getElementById("search") : document.getElementById("SearchDropdown");
     const startButton = document.createElement('a');
