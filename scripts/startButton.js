@@ -11,15 +11,35 @@ if (loginAnchor || loginSpan) {
     //   const oldSearchElement = document.getElementById("search");
     //   const newSearchElement = document.getElementById("SearchDropdown");
 
-    const searchElement = !!document.getElementById("search") ? document.getElementById("search") : document.getElementById("SearchDropdown");
-    const startButton = document.createElement('button');
+    const isOld = !!document.getElementById("search");
+    const searchElement = isOld ? document.getElementById("search") : document.getElementById("SearchDropdown");
+    const startButton = document.createElement('a');
     startButton.textContent = `Hide Garbage`;
 
-    startButton.style.backgroundColor = 'blue'; // Set background color
-    startButton.style.color = 'white'; // Set text color
-    startButton.style.padding = '10px'; // Set padding
-    startButton.style.border = 'none'; // Remove border
+    startButton.style.display = 'inline-block';
+    startButton.style.padding = '10px';
+    startButton.style.fontWeight = 700;
+    startButton.style.cursor = 'pointer';
+    startButton.style.textAlign = 'center';
+    startButton.style.textDecoration = 'none';
+    startButton.style.outline = 'none';
+    startButton.style.color = 'white';
+    startButton.style.backgroundColor = '#0079d3';
+    startButton.style.border = 'none';
+    
 
-    searchElement.insertAdjacentElement("afterend", startButton);
+    if (isOld) {
+        startButton.style.marginTop = '7px';
+        startButton.style.fontSize = '150%';
+        startButton.style.borderRadius = '4px';
+    } else {
+        startButton.style.borderRadius = '99999px';
+    }
+
+    const placement = isOld ? 'afterend' : 'beforebegin'
+
+    setTimeout(() => {
+        searchElement.insertAdjacentElement(placement, startButton)
+    }, 500);
 
 }
