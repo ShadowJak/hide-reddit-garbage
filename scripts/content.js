@@ -27,7 +27,7 @@ if (!document.querySelector('.recover-password')) {
 
         if (regex.test(window.location.href)) {
             for (let i = anchors.length - 1; i >= 0; i--) {
-                if (anchors[i].innerText === 'hide') {
+                if (anchors[i].innerText === 'hide' && anchors[i].href === 'javascript:void(0)') {
                     const closestTopMatterDiv = anchors[i].closest("div.top-matter");
                     if (closestTopMatterDiv) {
                         const titleP = closestTopMatterDiv.querySelector("p.title");
