@@ -79,8 +79,7 @@ if (!document.querySelector('.recover-password')) {
         'lays off',
         'layoff',
         'school shoot',
-        'mass shoot',
-        'trump'
+        'mass shoot'
     ];
 
     const tempSubredditArray = [];
