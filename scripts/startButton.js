@@ -12,9 +12,11 @@ if (loginAnchor || loginSpan || extensionTab) {
     console.log("Could not find 'Log In' element");
     const isOld = !!document.getElementById("search");
     const searchElement = isOld ? document.getElementById("search") : document.getElementById("SearchDropdown");
-    const startButton = document.createElement('a');
-    startButton.textContent = `Hide Garbage`;
 
+    const startButton = document.createElement('a');
+    startButton.href = "https://old.reddit.com/r/all/??";
+    startButton.target = "_blank";
+    startButton.textContent = `Hide Garbage`;
     startButton.style.display = 'inline-block';
     startButton.style.padding = '10px';
     startButton.style.fontWeight = 700;
