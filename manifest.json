@@ -20,6 +20,14 @@
             "matches": [
                 "https://old.reddit.com/r/*/??*"
             ]
+        },
+        {
+            "js": [
+                "scripts/startButton.js"
+            ],
+            "matches": [
+                "https://*.reddit.com/*"
+            ]
         }
     ],
     "permissions": [
