@@ -12,9 +12,36 @@ document.addEventListener('DOMContentLoaded', function () {
             const table = document.createElement('table');
             table.style.width = '100%'; // Set the table width
 
+            const wordsRow = table.insertRow();
+            const wordsCheckboxCell = wordsRow.insertCell(0);
+            const wordsCheckbox = document.createElement('input');
+            wordsCheckbox.type = 'checkbox';
+            wordsCheckbox.id = 'bannedWords';
+            wordsCheckboxCell.appendChild(wordsCheckbox);
+
+            const wordsLabelCell = wordsRow.insertCell(1);
+            const wordsLabel = document.createElement('label');
+            wordsLabel.htmlFor = 'bannedWords';
+            // const wordsLabelText = key.replace(/_/g, ' ');
+            wordsLabel.appendChild(document.createTextNode(`Hide Endless Tragedy from r/All`));
+            wordsLabelCell.appendChild(wordsLabel);
+
+            // This needs to be improved
+            chrome.storage.sync.get('bannedWords', function (settings) {
+                if (settings['bannedWords'] !== undefined) {
+                    wordsCheckbox.checked = settings['bannedWords'];
+                }
+            });
+
+            wordsCheckbox.addEventListener('change', function () {
+                const update = {};
+                update['bannedWords'] = wordsCheckbox.checked;
+                chrome.storage.sync.set(update);
+            });
+
+
             Object.keys(urlArrays).forEach(key => {
                 const row = table.insertRow();
-
                 const checkboxCell = row.insertCell(0);
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';

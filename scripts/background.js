@@ -254,6 +254,8 @@ const urlArrays = {
 
 const defaultSettings = {};
 
+defaultSettings['bannedWords'] = true;
+
 Object.keys(urlArrays).forEach(key => {
     defaultSettings[key] = true;
 })

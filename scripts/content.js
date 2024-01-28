@@ -34,14 +34,31 @@ if (!document.querySelector('.recover-password')) {
                         const titleP = closestTopMatterDiv.querySelector("p.title");
                         const nestedAnchor = titleP ? titleP.querySelector("a") : null;
                         if (nestedAnchor) {
-                            for (const word of bannedWords) {
-                                if (nestedAnchor.innerText.toLowerCase().includes(word)) {
-                                    setTimeout(function () {
-                                        anchors[i].click();
-                                    }, counter++ * 1000);
-                                    break;
+                            chrome.storage.sync.get('bannedWords', function (settings) {
+                                // console.log("settings['bannedWords']", settings['bannedWords']);
+                                // alert("settings['bannedWords']", settings['bannedWords']);
+                                if (settings['bannedWords'] === true) {
+                                    for (const word of bannedWords) {
+                                        if (nestedAnchor.innerText.toLowerCase().includes(word)) {
+                                            setTimeout(function () {
+                                                anchors[i].click();
+                                            }, counter++ * 1000);
+                                            break;
+                                        }
+                                    }
                                 }
-                            }
+                            })
+
+                            
+                            // for (const word of bannedWords) {
+                            //     console.log(1111111)
+                            //     if (nestedAnchor.innerText.toLowerCase().includes(word)) {
+                            //         setTimeout(function () {
+                            //             anchors[i].click();
+                            //         }, counter++ * 1000);
+                            //         break;
+                            //     }
+                            // }
                         }
                     }
                 }
@@ -75,7 +92,8 @@ if (!document.querySelector('.recover-password')) {
         'lays off',
         'layoff',
         'school shoot',
-        'mass shoot'
+        'mass shoot',
+        'trump'
     ];
 
 
