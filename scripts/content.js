@@ -1,5 +1,4 @@
 if (!document.querySelector('.recover-password')) {
-
     const overlay = document.createElement("div");
     overlay.style.position = "fixed";
     overlay.style.top = "0";
@@ -10,7 +9,7 @@ if (!document.querySelector('.recover-password')) {
     overlay.style.zIndex = "9999";
 
     const message = document.createElement("h1");
-    message.textContent = "Hide Reddit Garbage is running in this tab.";
+    message.innerHTML = "Hide Reddit Garbage is running in this tab.";
     message.style.color = "white";
     message.style.fontWeight = "bold";
     message.style.position = "absolute";
