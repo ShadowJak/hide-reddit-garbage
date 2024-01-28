@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const urlArrays = response.urlArrays;
             const checkboxContainer = document.getElementById('checkboxContainer');
             const table = document.createElement('table');
-            table.style.width = '100%'; // Set the table width
+            table.style.width = '100%';
 
             const wordsRow = table.insertRow();
             const wordsCheckboxCell = wordsRow.insertCell(0);
@@ -22,8 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const wordsLabelCell = wordsRow.insertCell(1);
             const wordsLabel = document.createElement('label');
             wordsLabel.htmlFor = 'bannedWords';
-            // const wordsLabelText = key.replace(/_/g, ' ');
-            wordsLabel.appendChild(document.createTextNode(`Hide Endless Tragedy from r/All`));
+            wordsLabel.appendChild(document.createTextNode(`Hide Endless Tragedy`));
+            wordsLabel.appendChild(document.createElement("br"));
+            wordsLabel.appendChild(document.createTextNode('\u00A0\u00A0\u00A0'));
+            wordsLabel.appendChild(document.createTextNode(`from r/All`));
+
             wordsLabelCell.appendChild(wordsLabel);
 
             // This needs to be improved
@@ -38,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 update['bannedWords'] = wordsCheckbox.checked;
                 chrome.storage.sync.set(update);
             });
-
 
             Object.keys(urlArrays).forEach(key => {
                 const row = table.insertRow();

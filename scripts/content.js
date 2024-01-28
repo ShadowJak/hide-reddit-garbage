@@ -35,8 +35,6 @@ if (!document.querySelector('.recover-password')) {
                         const nestedAnchor = titleP ? titleP.querySelector("a") : null;
                         if (nestedAnchor) {
                             chrome.storage.sync.get('bannedWords', function (settings) {
-                                // console.log("settings['bannedWords']", settings['bannedWords']);
-                                // alert("settings['bannedWords']", settings['bannedWords']);
                                 if (settings['bannedWords'] === true) {
                                     for (const word of bannedWords) {
                                         if (nestedAnchor.innerText.toLowerCase().includes(word)) {
@@ -48,17 +46,6 @@ if (!document.querySelector('.recover-password')) {
                                     }
                                 }
                             })
-
-                            
-                            // for (const word of bannedWords) {
-                            //     console.log(1111111)
-                            //     if (nestedAnchor.innerText.toLowerCase().includes(word)) {
-                            //         setTimeout(function () {
-                            //             anchors[i].click();
-                            //         }, counter++ * 1000);
-                            //         break;
-                            //     }
-                            // }
                         }
                     }
                 }
@@ -96,7 +83,6 @@ if (!document.querySelector('.recover-password')) {
         'trump'
     ];
 
-
     const tempSubredditArray = [];
     let urlArrays = null;
     let rAllUrl = "https://old.reddit.com/r/all/??";
@@ -123,7 +109,6 @@ if (!document.querySelector('.recover-password')) {
 
                 performLoopAndNavigate(subredditsToHide);
             });
-
 
         } else {
             console.error("Invalid response from background script:", response);
