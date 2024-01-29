@@ -23,9 +23,11 @@ if (!document.querySelector('.recover-password')) {
     function performLoopAndNavigate(websites) {
         const anchors = document.getElementsByTagName("a");
         const regex = /^https:\/\/old\.reddit\.com\/r\/all\/\?+$/;
+        const regexNews = /^https:\/\/old\.reddit\.com\/r\/news\/\?+$/;
+        const regexWorld = /^https:\/\/old\.reddit\.com\/r\/worldnews\/\?+$/;
         let counter = 0;
 
-        if (regex.test(window.location.href)) {
+        if (regex.test(window.location.href) || regexNews.test(window.location.href) || regexWorld.test(window.location.href)) {
             for (let i = anchors.length - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide' && anchors[i].href === 'javascript:void(0)') {
                     const closestTopMatterDiv = anchors[i].closest("div.top-matter");
@@ -98,6 +100,8 @@ if (!document.querySelector('.recover-password')) {
     const tempSubredditArray = [];
     let urlArrays = null;
     let rAllUrl = "https://old.reddit.com/r/all/??";
+    let rNewsUrl = "https://old.reddit.com/r/news/??";
+    let rWorldUrl = "https://old.reddit.com/r/worldnews/??";
 
     chrome.runtime.sendMessage({ message: "getUrlArrays" }, function (response) {
         if (response && response.urlArrays) {
@@ -116,8 +120,12 @@ if (!document.querySelector('.recover-password')) {
                 let spliceOffset = 0;
 
                 for (let i = 0; i < subredditsToHide.length; i += 10) {
+                    subredditsToHide.splice(i + spliceOffset, 0, rWorldUrl);
+                    subredditsToHide.splice(i + spliceOffset, 0, rNewsUrl);
                     subredditsToHide.splice(i + spliceOffset, 0, rAllUrl);
-                    spliceOffset++;
+                    spliceOffset += 3;
+                    rWorldUrl = rWorldUrl + "?";
+                    rNewsUrl = rNewsUrl + "?";
                     rAllUrl = rAllUrl + "?";
                 }
 
