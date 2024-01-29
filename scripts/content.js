@@ -27,7 +27,7 @@ if (!document.querySelector('.recover-password')) {
 
         if (regex.test(window.location.href)) {
             for (let i = anchors.length - 1; i >= 0; i--) {
-                if (anchors[i].innerText === 'hide') {
+                if (anchors[i].innerText === 'hide' && anchors[i].href === 'javascript:void(0)') {
                     const closestTopMatterDiv = anchors[i].closest("div.top-matter");
                     if (closestTopMatterDiv) {
                         const titleP = closestTopMatterDiv.querySelector("p.title");
@@ -51,8 +51,22 @@ if (!document.querySelector('.recover-password')) {
             }
 
         } else {
-            const maxLen = 700
-            let looper = anchors.length < maxLen ? anchors.length : maxLen;
+            let hideCounter = 0;
+            let hideIndex = -1;
+            for (let i = 0; i < anchors.length; i++) {
+                const anchor = anchors[i];
+
+                if (anchor.innerText.toLowerCase() === "hide") {
+                    hideCounter++;
+
+                    if (hideCounter === 6) {
+                        hideIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            let looper = hideIndex === -1 ? anchors.length : hideIndex;
             for (let i = looper - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide') {
                     setTimeout(function () {
