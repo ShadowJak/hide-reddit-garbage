@@ -36,6 +36,7 @@ const urlArrays = {
         "https://old.reddit.com/r/animememes/??",
         "https://old.reddit.com/r/Animemes/??",
         "https://old.reddit.com/r/ShitPostCrusaders/??",
+        "https://old.reddit.com/r/MemePiece/??",
     ],
     Celebrities: [
         "https://old.reddit.com/r/BravoRealHousewives/??",
@@ -127,6 +128,7 @@ const urlArrays = {
         "https://old.reddit.com/r/shitposting/??",
         "https://old.reddit.com/r/wholesomememes/??",
         "https://old.reddit.com/r/Funnymemes/??",
+        "https://old.reddit.com/r/MemePiece/??",
     ],
     Memestocks: [
         "https://old.reddit.com/r/Superstonk/??",
@@ -267,14 +269,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
 });
 
-chrome.storage.sync.get(defaultSettings, function (settings) {
+chrome.storage.sync.get(null, function (settings) {
     const extensionSettings = settings || defaultSettings;
 
-    for (const key in defaultSettings) {
-        if (defaultSettings.hasOwnProperty(key) && extensionSettings[key] === undefined) {
+    Object.keys(extensionSettings).forEach(key => {
+        if (!(key in defaultSettings)) {
+            delete extensionSettings[key];
+        }
+    });
+
+    Object.keys(defaultSettings).forEach(key => {
+        if (!(key in extensionSettings)) {
             extensionSettings[key] = defaultSettings[key];
         }
-    }
+    });
 
     chrome.storage.sync.set(extensionSettings);
 });
