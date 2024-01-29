@@ -88,7 +88,7 @@ if (!document.querySelector('.recover-password')) {
 
     const bannedWords = [
         "ukrain",
-        'russ',
+        'russi',
         'lays off',
         'layoff',
         'school shoot',
@@ -110,7 +110,9 @@ if (!document.querySelector('.recover-password')) {
                 }
 
                 const subredditSet = new Set(tempSubredditArray);
-                const subredditsToHide = Array.from(subredditSet);
+                const subredditsToHideUnsorted = Array.from(subredditSet);
+                const subredditsToHide = subredditsToHideUnsorted.sort((a,b) => b.localeCompare(a));
+
                 let spliceOffset = 0;
 
                 for (let i = 0; i < subredditsToHide.length; i += 10) {
