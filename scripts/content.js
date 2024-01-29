@@ -51,8 +51,24 @@ if (!document.querySelector('.recover-password')) {
             }
 
         } else {
-            const maxLen = 700
-            let looper = anchors.length < maxLen ? anchors.length : maxLen;
+            let hideCounter = 0;
+            let hideIndex = -1;
+            for (let i = 0; i < anchors.length; i++) {
+                const anchor = anchors[i];
+
+                if (anchor.innerText.toLowerCase() === "hide") {
+                    hideCounter++;
+
+                    if (hideCounter === 6) {
+                        hideIndex = i;
+                        break;  // No need to continue iterating
+                    }
+                }
+            }
+
+            // const maxLen = tenthHideIndex;
+            let looper = hideIndex === -1 ? anchors.length : hideIndex;
+            // let looper = anchors.length < maxLen ? anchors.length : maxLen;
             for (let i = looper - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide') {
                     setTimeout(function () {

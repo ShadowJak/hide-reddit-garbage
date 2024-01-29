@@ -27,7 +27,7 @@ if (loginAnchor || loginSpan || extensionTab) {
     startButton.style.color = 'white';
     startButton.style.backgroundColor = '#0079d3';
     startButton.style.border = 'none';
-    
+
 
     if (isOld) {
         startButton.style.marginTop = '7px';
@@ -39,8 +39,10 @@ if (loginAnchor || loginSpan || extensionTab) {
 
     const placement = isOld ? 'afterend' : 'beforebegin'
 
-    setTimeout(() => {
-        searchElement.insertAdjacentElement(placement, startButton)
-    }, 500);
+    if (searchElement) {
+        setTimeout(() => {
+            searchElement.insertAdjacentElement(placement, startButton)
+        }, 500);
 
+    }
 }
