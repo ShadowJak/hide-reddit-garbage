@@ -36,6 +36,7 @@ const urlArrays = {
         "https://old.reddit.com/r/animememes/??",
         "https://old.reddit.com/r/Animemes/??",
         "https://old.reddit.com/r/ShitPostCrusaders/??",
+        "https://old.reddit.com/r/MemePiece/??",
     ],
     Celebrities: [
         "https://old.reddit.com/r/BravoRealHousewives/??",
@@ -127,6 +128,7 @@ const urlArrays = {
         "https://old.reddit.com/r/shitposting/??",
         "https://old.reddit.com/r/wholesomememes/??",
         "https://old.reddit.com/r/Funnymemes/??",
+        "https://old.reddit.com/r/MemePiece/??",
     ],
     Memestocks: [
         "https://old.reddit.com/r/Superstonk/??",
