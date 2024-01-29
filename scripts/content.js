@@ -61,14 +61,12 @@ if (!document.querySelector('.recover-password')) {
 
                     if (hideCounter === 6) {
                         hideIndex = i;
-                        break;  // No need to continue iterating
+                        break;
                     }
                 }
             }
 
-            // const maxLen = tenthHideIndex;
             let looper = hideIndex === -1 ? anchors.length : hideIndex;
-            // let looper = anchors.length < maxLen ? anchors.length : maxLen;
             for (let i = looper - 1; i >= 0; i--) {
                 if (anchors[i].innerText === 'hide') {
                     setTimeout(function () {
