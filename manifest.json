@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Hide Reddit Garbage",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Get rid of outrage, despair, and unfunny garbage on Reddit.",
     "icons": {
         "16": "images/reddit-garbage-16.png",

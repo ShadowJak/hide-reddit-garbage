@@ -22,6 +22,9 @@ const urlArrays = {
         "https://old.reddit.com/r/WTF/??",
         "https://old.reddit.com/r/nbacirclejerk/??",
         "https://old.reddit.com/r/atheism/??",
+        "https://old.reddit.com/r/ChoosingBeggars/??",
+        "https://old.reddit.com/r/discordVideos/??",
+        "https://old.reddit.com/r/notinteresting/??",
     ],
     Bad_Anime: [
         "https://old.reddit.com/r/ChainsawMan/??",
@@ -58,6 +61,7 @@ const urlArrays = {
         "https://old.reddit.com/r/AITAH/??",
         "https://old.reddit.com/r/AmItheAsshole/??",
         "https://old.reddit.com/r/badroommates/??",
+        "https://old.reddit.com/r/ChoosingBeggars/??",
     ],
     Despair: [
         "https://old.reddit.com/r/depressionmeals/??",
@@ -185,6 +189,7 @@ const urlArrays = {
         "https://old.reddit.com/r/Political_Revolution/??",
         "https://old.reddit.com/r/ToiletPaperUSA/??",
         "https://old.reddit.com/r/FluentInFinance/??",
+        "https://old.reddit.com/r/ChoosingBeggars/??",
     ],
     Parasocializers: [
         "https://old.reddit.com/r/Hololive/??",

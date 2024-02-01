@@ -115,11 +115,11 @@ if (!document.querySelector('.recover-password')) {
 
                 const subredditSet = new Set(tempSubredditArray);
                 const subredditsToHideUnsorted = Array.from(subredditSet);
-                const subredditsToHide = subredditsToHideUnsorted.sort((a,b) => b.localeCompare(a));
+                const subredditsToHide = subredditsToHideUnsorted.sort((a, b) => b.localeCompare(a));
 
                 let spliceOffset = 0;
 
-                for (let i = 0; i < subredditsToHide.length; i += 10) {
+                for (let i = 0; i < subredditsToHide.length; i += 20) {
                     subredditsToHide.splice(i + spliceOffset, 0, rWorldUrl);
                     subredditsToHide.splice(i + spliceOffset, 0, rNewsUrl);
                     subredditsToHide.splice(i + spliceOffset, 0, rAllUrl);
@@ -127,6 +127,14 @@ if (!document.querySelector('.recover-password')) {
                     rWorldUrl = rWorldUrl + "?";
                     rNewsUrl = rNewsUrl + "?";
                     rAllUrl = rAllUrl + "?";
+                }
+
+                for (let i = subredditsToHide.length - 1; i >= 0; i--) {
+                    if (subredditsToHide[i].includes("???")) {
+                        subredditsToHide.pop();
+                    } else {
+                        break;
+                    }
                 }
 
                 performLoopAndNavigate(subredditsToHide);
